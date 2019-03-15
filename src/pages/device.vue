@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="bind_find" @click="goLink()">
-                    立即绑定
+                    立即绑定{{yy}}
                 </div>
             </div>
    
@@ -32,6 +32,11 @@ import navBar from "../components/navigationBar";
 export default {
   data() {
     return {};
+  },
+  computed:{
+      yy(){
+        return this.$store.state
+      }
   },
   mounted: function() {},
   methods: {

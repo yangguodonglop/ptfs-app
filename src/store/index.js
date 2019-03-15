@@ -36,7 +36,7 @@ const mutations={
     },
     changeLogin (state, user) {
         state.Authorization = user.Authorization;
-        sessionStorage.setItem('Authorization', user.Authorization);
+        //sessionStorage.setItem('Authorization', user.Authorization);
       }
 }
 const actions={

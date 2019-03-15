@@ -11,7 +11,7 @@
                </div>
             </div>
             <div class="next"  @click="getCode()">
-                    下一步
+                    下一步11111
             </div>
         </div>
         
@@ -20,7 +20,7 @@
 
 <script>
 import axios from "axios";
-import { mapMutations } from 'vuex';
+//import { mapMutations } from 'vuex';
 import { queryAllNodesProfiles, login } from "../common/js/api";
 export default {
   data() {
@@ -31,28 +31,14 @@ export default {
   },
   mountod: function() {},
   methods: {
-    ...mapMutations(['changeLogin']),
+    //...mapMutations(['changeLogin']),
     goLink() {},
 
     getCode() {
-      this.$router.push({ path: "/description" });
-      // let param = new Object();
-      // param.phoneNum = 13912345678;
-      // login(param)
-      //   .then(response => {
-      //     console.log(response);
-      //     let { data } = response.data;
-      //     //根据store中set_token方法将token保存至localStorage/sessionStorage中，data["Authentication-Token"]，获取token的value值\
-      //     let userToken = 'Bearer ' + response.data.token;
-      //     // 将用户token保存到vuex中
-      //     this.changeLogin({ Authorization: userToken });
- 
-      //     // this.$store.commit("set_token", response.data.token);
-      //     this.$router.push({ path: "/description" });
-      //   })
-      //   .catch(error => {
-      //     console.log(error);
-      //   });
+        
+        this.$store.commit('changeLogin',{Authorization:'15926290460'})
+        let path = this.$route.query.redirect
+        this.$router.push({path:(path||"/user")})
     }
     // getCode: function() {
     //   this.cmdType = "cache";
